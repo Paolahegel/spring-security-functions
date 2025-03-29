@@ -1,6 +1,5 @@
-package dio.spring_security;
+package dio.spring_security.controller;
 
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,12 +10,10 @@ public class WelcomeController {
         return "Welcome to Spring Security";
     }
     @GetMapping("/users")
-    @PreAuthorize("hasAnyRole('manager', 'users')")
     public String users(){
         return "Authorized user";
     }
     @GetMapping("/managers")
-    @PreAuthorize("hasAnyRole('managers')")
     public String managers(){
         return "Authorized manager";
     }
