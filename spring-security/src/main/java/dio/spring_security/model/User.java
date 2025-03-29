@@ -21,7 +21,7 @@ public class User {
     @Column(length = 100, nullable = false)
     private String password;
     @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "tab_user_roles", joinColumns = @JoinColumn(name = "user"))
+    @CollectionTable(name = "tab_user_roles", joinColumns = @JoinColumn(name = "tst_user"))
     @Column(name = "role_id")
     private List<String> roles = new ArrayList<>();
 

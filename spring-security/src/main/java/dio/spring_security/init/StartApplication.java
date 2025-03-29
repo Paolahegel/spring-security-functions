@@ -5,7 +5,9 @@ import dio.spring_security.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StartApplication implements CommandLineRunner {
     @Autowired
     private UserRepository repository;

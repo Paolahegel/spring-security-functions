@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 
 // Repositório é responsável por interagir com nossa entidade e realizar as operações CRUD
 public interface UserRepository extends JpaRepository<User, Integer> {
-    @Query("SELECT e FROM User e JOIN FETCH e.roles WHERE e.username = (:username)")
-    public User findByUsername(@Param("username") String username);
-
+    @Query("SELECT e FROM User e JOIN FETCH e.roles WHERE e.username= (:username)")
+    User findByUsername(@Param("username") String username);
 }
